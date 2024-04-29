@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_04_25_155516) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.integer "zip_code"
@@ -19,8 +22,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_155516) do
   end
 
   create_table "gossip_tags", force: :cascade do |t|
-    t.integer "gossip_id"
-    t.integer "tag_id"
+    t.bigint "gossip_id"
+    t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["gossip_id"], name: "index_gossip_tags_on_gossip_id"
@@ -30,14 +33,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_155516) do
   create_table "gossips", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_gossips_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,8 +48,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_155516) do
   end
 
   create_table "recipients", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "message_id"
+    t.bigint "user_id"
+    t.bigint "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["message_id"], name: "index_recipients_on_message_id"
@@ -55,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_155516) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tags_on_user_id"
@@ -67,7 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_155516) do
     t.string "email"
     t.integer "age"
     t.integer "description"
-    t.integer "city_id"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_users_on_city_id"

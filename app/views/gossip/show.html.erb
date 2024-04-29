@@ -1,0 +1,4 @@
+<h1>Gossip#show</h1>
+<p>Find me in app/views/gossip/show.html.erb</p>
+<p><strong>NOM : </strong><%= @gossip.user.first_name %> <strong> A DIT : </strong>"<%= @gossip.title %>!"</p>
+<p><strong>Author :</strong> <%= link_to @gossip.user.first_name, user_path(@gossip.user)%></p>

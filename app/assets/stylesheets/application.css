@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ /*h1{
+  color:brown
+ }*/
+  @import 'bootstrap/scss/bootstrap';
+  @import 'bootstrap-icons/font/bootstrap-icons'; 
