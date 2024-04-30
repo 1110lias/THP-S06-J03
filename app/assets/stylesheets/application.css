@@ -14,7 +14,22 @@
  *= require_self
  */
  /*h1{
-  color:brown
- }*/
+   color:brown
+  }*/
+  .card-body{
+    background-color: #d1d3d6
+  }
+ .card-header{
+  background-color: #c0d9ff
+ }/* Change default link color */
+
+ a {
+  color: #ff0000; /* Red color */
+}
+  /* Change link color on hover */
+  a:hover {
+    color: #203174; /* Tomato color */
+  }
+  
   @import 'bootstrap/scss/bootstrap';
   @import 'bootstrap-icons/font/bootstrap-icons'; 

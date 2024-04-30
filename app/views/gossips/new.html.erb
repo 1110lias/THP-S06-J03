@@ -1,0 +1,24 @@
+<html>
+<h1>Gossips#new</h1>
+<p>Find me in app/views/gossips/new.html.erb</p>
+
+<!-- app/views/gossips/new.html.erb -->
+<h1>Nouveau Gossip</h1>
+
+<%= form_tag gossips_path do %>
+  <div class="field">
+    <%= label_tag :title, "Titre du Gossip" %>
+    <%= text_field_tag 'gossip[title]' %>
+    <!-- si pas de require, mettre <%= text_field_tag :title %>!-->
+  </div>
+  <div class="field">
+    <%= label_tag :user_id, "user_id" %>
+    <%= text_field_tag 'gossip[user_id]' %>
+  </div>
+  <div class="field">
+    <%= label_tag :description, "Contenu du Gossip" %>
+    <%= text_area_tag 'gossip[description]' %>
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= submit_tag "Créer le Gossip" %>
+<% end %>

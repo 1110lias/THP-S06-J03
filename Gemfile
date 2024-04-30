@@ -68,3 +68,5 @@ group :test do
 end
 
 gem "table_print", "~> 1.5"
+
+gem "simple_form", "~> 5.3"
