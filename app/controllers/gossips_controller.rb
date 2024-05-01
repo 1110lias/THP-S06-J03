@@ -21,9 +21,6 @@ class GossipsController < ApplicationController
     if @gossip.save
       redirect_to @gossip, notice: 'Gossip créé avec succès!'
     else
-      puts "*" * 120
-      puts "ça a merdé"
-      puts "*" * 120
       render :new
     end
   end
