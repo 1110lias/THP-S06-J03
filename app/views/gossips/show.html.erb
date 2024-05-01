@@ -4,3 +4,4 @@
 <p><strong>Author :</strong> <%= link_to @gossip.user.first_name, user_path(@gossip.user)%></p>
 <p><strong>Author's city :</strong> <%= link_to @gossip.user.city.name, city_path(@gossip.user.city)%> </p>
 <p><%= link_to "edit", edit_gossip_path, class: "btn btn-dark" %> </p>
+<%= link_to "Supprimer", gossip_path(@gossip), data: { turbo_method: :delete, confirm: "Êtes-vous sûr ?" }, class: "btn btn-dark" %>
