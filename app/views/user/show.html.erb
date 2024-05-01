@@ -4,4 +4,4 @@
 <p>Email: <%= @user.email %></p>
 <p>Age: <%= @user.age %></p>
 <p>Description: <%= @user.description %></p>
-<p>City: <%= @user.city.name %></p>
+ <p><strong>City :</strong> <%= link_to @user.city.name, city_path(@user.city) %></p>

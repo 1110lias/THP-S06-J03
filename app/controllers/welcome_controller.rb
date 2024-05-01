@@ -6,4 +6,4 @@ class WelcomeController < ApplicationController
     @var01 = params[:id]
     puts "$" * 60
   end 
-end
+end 

@@ -1,5 +1,4 @@
 class GossipsController < ApplicationController
-
   def index
     puts "here first"
     @gossips = Gossip.all
@@ -14,7 +13,7 @@ class GossipsController < ApplicationController
   def new
     @gossip = Gossip.new
   end
-
+  
   def create
     @gossip = Gossip.new(gossip_params)
 
@@ -23,6 +22,22 @@ class GossipsController < ApplicationController
       flash[:success] = "C'EST UN SUCCES!BRAVO!" #pour afficher le bandeau alerte (Voir html new)
     else
       render :new
+      flash[:danger] = "C'EST FOIRE" #pour afficher le bandeau alerte (Voir html index)
+    end
+  end
+
+  def edit
+    @gossip = Gossip.find(params[:id])
+  end
+
+  def update
+    @gossip = Gossip.find(params[:id])
+    
+    if @gossip.update(gossip_params)
+      redirect_to gossips_path, notice: 'Gossip modifié avec succès!'
+      flash[:success] = "C'EST UN SUCCES!BRAVO!" #pour afficher le bandeau alerte (Voir html new)
+    else
+      render :edit
       flash[:danger] = "C'EST FOIRE" #pour afficher le bandeau alerte (Voir html index)
     end
   end

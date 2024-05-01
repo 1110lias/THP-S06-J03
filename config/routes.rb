@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :gossips, only: [:new, :create, :show, :index]
+  resources :gossips
   resources :team, only: [:index]
   resources :contact, only: [:index]
   resources :welcome, only: [:show]
   resources :user, only:[:show]
+  resources :city, only:[:show]
   
   #get '/welcome/:first_name', to: "welcome#show", as: 'welcome'  #OLD PATH BEFORE CRUD & REST
   #get '/team', to: 'team#show'                                   #OLD PATH BEFORE CRUD & REST
