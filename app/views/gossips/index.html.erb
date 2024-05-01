@@ -4,7 +4,21 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-  <h1>The Gossip Project day2 v2</h1>
+  <% if flash[:success] %>
+  <div class="alert alert-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+<div class="jumbotron">
+  <h1 class="display-4">Gossip Project</h1>
+  <p class="lead">Ceci est une réplique du projet de Zuckerberg avant Facebook. C'est le même avec exactement 20 ans de retard.</p>
+  <hr class="my-4">
+  <p>100% des étudiant THP utilisent ce site:</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://chat.openai.com/" role="button">Learn more</a>
+  </p>
+</div>
+  <h1>The Gossip Project day3 v3</h1>
 <!-- Container for cards with increased top margin -->
 <div class="container mt-5">
   <div class="row">

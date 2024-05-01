@@ -2,6 +2,11 @@
 <head>
  </head>
 <body>
+  <% if flash[:danger] %>
+    <div class="alert alert-danger">
+      <%= flash[:danger] %>
+    </div>
+  <% end %>
   <div class="container mt-5">
     <h1 class="mb-4">Nouveau Gossip</h1>
     <%= form_tag gossips_path do %>

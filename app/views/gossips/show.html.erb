@@ -2,3 +2,4 @@
 <p>Find me in app/views/gossip/show.html.erb</p>
 <p><strong>NOM : </strong><%= @gossip.user.first_name %> <strong> A DIT : </strong>"<%= @gossip.title %> </strong>"<%= @gossip.description %>!"</p> 
 <p><strong>Author :</strong> <%= link_to @gossip.user.first_name, user_path(@gossip.user)%></p>
+<p><strong>Author's city :</strong> <%= @gossip.user.city.name%> (city id: <%= @gossip.user.city_id%>)</p>
